@@ -80,16 +80,20 @@ public class DisplayDayOfMonth {
                 month = 12;
                 break;
             default:
-                System.out.println("Invalid month. Please enter a valid month.");      
+                System.out.println("Invalid month. Please enter a valid month."); 
+                scanner.close();     
                 return;
         }
         System.out.println("Enter a year (example: 1999): ");
         int year = scanner.nextInt();
+        
         if (year <= 0) {
             System.out.println("Invalid year. Please enter a non-negative number.");
+            scanner.close();
             return;
         }
-        
+
+        scanner.close();
         
         // Month class in the same folder
         Month currentMonth = new Month(month, year);

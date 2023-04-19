@@ -30,6 +30,8 @@ public class AddTwoMatrices {
                 secondMatrix[i][j] = scanner.nextInt();
             }
         }
+        
+        scanner.close();
 
         // Print out the matrix
         System.out.println("The first matrix: ");
