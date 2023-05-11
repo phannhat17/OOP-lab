@@ -1,4 +1,4 @@
-## Folder Structure
+## Folder Structure for Lab 01
 
 - `src`: the folder to maintain sources
 
