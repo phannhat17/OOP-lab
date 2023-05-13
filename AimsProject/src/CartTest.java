@@ -14,5 +14,11 @@ public class CartTest {
 
         cart.print();
 
+        cart.searchByID(1);
+        cart.searchByTitle("a");
+        cart.searchByCategory("Science");
+        cart.searchByPrice(2000);
+        cart.searchByPrice(1900,2000);
+
     }
 }
