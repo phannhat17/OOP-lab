@@ -60,7 +60,7 @@ public class Cart {
     public void searchByTitle(String keyword) {
         boolean matchFound = false;
         for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i].getTitle().toLowerCase().contains(keyword.toLowerCase())) {
+            if (itemsOrdered[i].isMatch(keyword)) {
                 System.out.println("Found" + itemsOrdered[i]);
                 matchFound = true;
             }
@@ -105,6 +105,19 @@ public class Cart {
         }
         if (!matchFound) {
             System.out.println("Sorry, no DVDs were found that match the cost range between your specified minimum and maximum!");
+        }
+    }
+
+    public void searchByID(int id) {
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getId() == id) {
+                System.out.println("Found" + itemsOrdered[i]);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Sorry, no DVDs were found that match the ID provided!");
         }
     }
 
