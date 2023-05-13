@@ -24,6 +24,9 @@ public class DigitalVideoDisc {
     public float getCost() {
         return cost;
     }
+    public int getId() {
+        return id;
+    }
 
     public void setTitle(String title) {
         this.title = title;
@@ -62,6 +65,10 @@ public class DigitalVideoDisc {
                 " - Director: " + this.title +
                 " - DVD length: " + this.length +
                 " - Cost: " + this.cost + "$";
+    }
+
+    public boolean isMatch(String title) {
+        return this.title.toLowerCase().contains(title.toLowerCase());
     }
     
 }
