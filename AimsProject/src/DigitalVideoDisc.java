@@ -57,7 +57,7 @@ public class DigitalVideoDisc {
     
     @Override
     public String toString() {
-        return this.id + ". DVD: " + this.title +
+        return "DVD: " + this.title +
                 " - Category: " + this.category +
                 " - Director: " + this.title +
                 " - DVD length: " + this.length +
