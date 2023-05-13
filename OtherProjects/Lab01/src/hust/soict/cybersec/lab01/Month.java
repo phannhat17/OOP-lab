@@ -1,3 +1,4 @@
+package hust.soict.cybersec.lab01;
 public class Month {
     private int monthNumber;
     private int year;

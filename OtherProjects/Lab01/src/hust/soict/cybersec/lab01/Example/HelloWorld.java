@@ -1,4 +1,4 @@
-package Example;
+package hust.soict.cybersec.lab01.Example;
 public class HelloWorld {
     
     public static void main(String[] args) {

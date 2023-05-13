@@ -1,3 +1,6 @@
+package hust.soict.cybersec.test.disc;
+import hust.soict.cybersec.aims.disc.DigitalVideoDisc;
+
 public class TestPassingParameter {
     
     public static void main(String[] args) {

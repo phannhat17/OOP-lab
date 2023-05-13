@@ -1,3 +1,4 @@
+package hust.soict.cybersec.lab01;
 import java.util.Arrays;
 import java.util.Scanner;
 

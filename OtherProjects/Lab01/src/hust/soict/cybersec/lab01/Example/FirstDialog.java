@@ -1,4 +1,4 @@
-package Example;
+package hust.soict.cybersec.lab01.Example;
 import javax.swing.JOptionPane;
 
 public class FirstDialog {
