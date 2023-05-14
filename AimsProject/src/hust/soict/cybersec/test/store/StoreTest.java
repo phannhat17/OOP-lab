@@ -1,5 +1,5 @@
 package hust.soict.cybersec.test.store;
-import hust.soict.cybersec.aims.disc.DigitalVideoDisc;
+import hust.soict.cybersec.aims.media.DigitalVideoDisc;
 import hust.soict.cybersec.aims.store.Store;
 
 public class StoreTest {

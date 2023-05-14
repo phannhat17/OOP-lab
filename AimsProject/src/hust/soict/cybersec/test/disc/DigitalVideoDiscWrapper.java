@@ -1,5 +1,5 @@
 package hust.soict.cybersec.test.disc;
-import hust.soict.cybersec.aims.disc.DigitalVideoDisc;
+import hust.soict.cybersec.aims.media.DigitalVideoDisc;
 
 public class DigitalVideoDiscWrapper {
     DigitalVideoDisc dvd;
