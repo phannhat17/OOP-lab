@@ -1,18 +1,15 @@
-## Getting Started
+## Answer for questions in the lab
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+The answer can be found in [answers.txt](./answers.txt)
 
-## Folder Structure
+1. Is JAVA a Pass by Value or a Pass by Reference programming language?  
+Java is a passed by value programming language.
 
-The workspace contains two folders by default, where:
+2. After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?  
+Because the swap() method is exchanging the values of the title fields between the two objects, but it's not changing the object references themselves. So the jungleDVD and cinderellaDVD object references still point to the same objects in memory as before the swap() method call.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+3. After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?  
+Because the changeTitle() method is modifying the title field of the jungleDVD object directly using the setter method.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+4. Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?  
+The return type should be String
