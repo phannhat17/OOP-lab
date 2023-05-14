@@ -1,9 +1,6 @@
 # OOP-Lab
-Lab exercises for Object-oriented Programming course SoICT - HUST
-| Lab Number |      Status     |
-|:----------:|:---------------:|
-|     01     |    Completed    |
-|     02     |    Completed    |
-|     03     |   In Progress   |
-|     04     |   Not started   |
-|     05     |   Not started   |
+Lab exercises for Object-oriented Programming course SoICT - HUST  
+
+- Lab 01 - COMPLETED - Location: [OtherProjects/src/hust/soict/cybersec/lab01](./OtherProjects/src/hust/soict/cybersec/lab01/)
+- Lab 02 - COMPLETED - Location: [OtherProjects/Lab02](./OtherProjects/Lab02/)
+- Lab 03 - COMPLETED - Location: [OtherProjects/Lab03](./tree/release/lab03/)
