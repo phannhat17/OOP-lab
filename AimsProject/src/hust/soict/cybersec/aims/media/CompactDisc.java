@@ -7,12 +7,12 @@ public class CompactDisc extends Media implements Playable {
     private String artist;
     private ArrayList<Track> tracks; 
 
-    
+    // Getter method
     public String getArtist() {
         return artist;
     }
 
-
+    // Constructor 
     public CompactDisc(String title) {
         super(title);
     }
@@ -21,6 +21,7 @@ public class CompactDisc extends Media implements Playable {
         this.artist = artist;
     }
 
+    // Add and remove track
     public void addTrack(Track track) {
         if (!tracks.contains(track)) {
             tracks.add(track);
@@ -37,6 +38,7 @@ public class CompactDisc extends Media implements Playable {
         }
     }
     
+    // Get length of the track
     public int getLength() {
         int totalLength = 0;
         for (Track track : tracks) {
@@ -45,6 +47,7 @@ public class CompactDisc extends Media implements Playable {
         return totalLength;
     }
 
+    // Play method
     public void play() {
         System.out.println("Playing CD: " + this.getTitle());
         System.out.println("CD length: " + this.getLength());
