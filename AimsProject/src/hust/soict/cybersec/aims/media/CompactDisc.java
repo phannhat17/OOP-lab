@@ -25,7 +25,7 @@ public class CompactDisc extends Media implements Playable {
     public void addTrack(Track track) {
         if (!tracks.contains(track)) {
             tracks.add(track);
-            System.out.println("Track: " + track.getTitle() + " has been added!");
+            System.out.println("Track: " + track.getTitle() + " has been added to CD: " + this.getTitle());
         } else {
             System.out.println("Track already exists in CD.");
         }
@@ -34,7 +34,7 @@ public class CompactDisc extends Media implements Playable {
     public void removeTrack(Track track) {
         if (tracks.contains(track)) {
             tracks.remove(track);
-            System.out.println("Track: " +track.getTitle() + " has been removed!");
+            System.out.println("Track: " +track.getTitle() + " has been removed from CD: " + this.getTitle());
         } else {
             System.out.println("Track does not exist in CD.");
         }
