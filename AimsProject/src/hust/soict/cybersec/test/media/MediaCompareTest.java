@@ -38,15 +38,33 @@ public class MediaCompareTest {
         mediae.add(dvd2);     
         mediae.add(dvd3);    
 
+
+        // Sort using override compareto method
+        System.out.println();
+        System.out.println("*******SORT USING OVERRIDE compareTo method*******");
+        Collections.sort(mediae);
+        Iterator<Media> iterator = mediae.iterator();
+        
+        while (iterator.hasNext()) {
+			System.out.println(((Media)iterator.next()).toString());
+		}
+        
+        System.out.println("**************************************************");
+        
+        
+        // Sort by title using comparator
         System.out.println();
         System.out.println("**********SORT BY TITLE USING COMPARATOR**********");
         Collections.sort((List<Media>)mediae, Media.COMPARE_BY_TITLE_COST);
-        Iterator<Media> iterator = mediae.iterator();
+        iterator = mediae.iterator();
 
         while (iterator.hasNext()) {
 			System.out.println(((Media)iterator.next()).toString());
 		}
         System.out.println("**************************************************");
+        
+
+        // Sort by cost using comparator
         System.out.println();
         System.out.println("**********SORT BY COST USING COMPARATOR************");
         Collections.sort((List<Media>)mediae, Media.COMPARE_BY_COST_TITLE);
