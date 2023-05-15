@@ -2,6 +2,8 @@ package hust.soict.cybersec.aims.media;
 
 import java.util.*;
 
+import hust.soict.cybersec.test.disc.TestPassingParameter;
+
 public class Book extends Media {
     
     private List<String> authors = new ArrayList<String>();
@@ -32,5 +34,12 @@ public class Book extends Media {
         } else {
             System.out.println("No author has been found to remove!");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Book: " + this.getTitle() +
+                " - Category: " + this.getCategory() +
+                " - Cost: " + this.getCost() + "$";
     }
 }
