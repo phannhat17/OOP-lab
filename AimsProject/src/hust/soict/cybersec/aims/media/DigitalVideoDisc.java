@@ -2,7 +2,7 @@ package hust.soict.cybersec.aims.media;
 
 public class DigitalVideoDisc extends Disc implements Playable {
     
-    
+    // Constructor 
     public DigitalVideoDisc(String title) {
         super(title);
     }    
@@ -26,6 +26,7 @@ public class DigitalVideoDisc extends Disc implements Playable {
                 " - Cost: " + this.getCost() + "$";
     }
 
+    // Play method
     public void play() {
         System.out.println("Playing DVD: " + this.getTitle());
         System.out.println("DVD length: " + this.getLength());

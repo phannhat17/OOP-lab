@@ -8,6 +8,7 @@ public abstract class Media {
     private String category;
     private float cost;
 
+    // Constructor 
     public Media(String title) {
         this.title = title;
 		this.id = ++nbMedia;
@@ -24,26 +25,26 @@ public abstract class Media {
         this.id = ++nbMedia;
     }
     
+    // Getter method
     public int getId() {
         return id;
     }
-
     public String getTitle() {
         return title;
     }
-
     public String getCategory() {
         return category;
     }
-
     public float getCost() {
         return cost;
     }
 
+    // Setter method
     public void setTitle(String title) {
         this.title = title;
     }
     
+    // Check is title match
     public boolean isMatch(String title) {
         return this.getTitle().toLowerCase().contains(title.toLowerCase());
     }

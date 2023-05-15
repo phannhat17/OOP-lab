@@ -6,6 +6,7 @@ public class Book extends Media {
     
     private List<String> authors = new ArrayList<String>();
     
+    // Constructor 
     public Book(String title) {
         super(title);
     }
@@ -16,6 +17,7 @@ public class Book extends Media {
         super(title, category, cost);
     }
 
+    // Add and remove author 
     public void addAuthor(String authorName) {
         if (!authors.contains(authorName)) {
             authors.add(authorName);
