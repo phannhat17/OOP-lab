@@ -10,6 +10,10 @@ public class MediaCompareTest {
         List<Media> mediae = new ArrayList<Media>();
 
         DigitalVideoDisc dvd = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star War", "Science Fiction", "George Lucas", 87, 24.95f); 
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
+
+
         Book book = new Book("The Valley of Fear", "Detective", 20.00f);
         Book book1 = new Book("A Living Remedy: A Memoir", "Biography", 202.00f);
         Book book2 = new Book("On the Origin of Time: Stephen Hawking's Final Theory", "Science", 120.00f);
@@ -30,7 +34,9 @@ public class MediaCompareTest {
         mediae.add(book1);
         mediae.add(book2);
         mediae.add(book3);
-        mediae.add(dvd);    
+        mediae.add(dvd);   
+        mediae.add(dvd2);     
+        mediae.add(dvd3);    
 
         System.out.println();
         System.out.println("**********SORT BY TITLE USING COMPARATOR**********");
