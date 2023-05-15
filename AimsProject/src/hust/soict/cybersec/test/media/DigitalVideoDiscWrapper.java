@@ -1,4 +1,4 @@
-package hust.soict.cybersec.test.disc;
+package hust.soict.cybersec.test.media;
 import hust.soict.cybersec.aims.media.DigitalVideoDisc;
 
 public class DigitalVideoDiscWrapper {

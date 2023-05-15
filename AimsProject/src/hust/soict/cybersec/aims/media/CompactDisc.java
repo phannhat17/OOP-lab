@@ -1,11 +1,11 @@
 package hust.soict.cybersec.aims.media;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class CompactDisc extends Media implements Playable {
 
     private String artist;
-    private ArrayList<Track> tracks; 
+    private List<Track> tracks = new ArrayList<Track>();; 
 
     // Getter method
     public String getArtist() {
@@ -63,7 +63,7 @@ public class CompactDisc extends Media implements Playable {
         return "CD: " + this.getTitle() +
                 " - Category: " + this.getCategory() +
                 " - Artist" + this.getArtist() +
-                " - Length: " + this.getLength() +
+                " - Length: " + this.getLength() + " seconds" + 
                 " - Cost: " + this.getCost() + "$";
     }
 }

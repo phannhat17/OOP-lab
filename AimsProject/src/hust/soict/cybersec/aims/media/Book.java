@@ -2,8 +2,6 @@ package hust.soict.cybersec.aims.media;
 
 import java.util.*;
 
-import hust.soict.cybersec.test.disc.TestPassingParameter;
-
 public class Book extends Media {
     
     private List<String> authors = new ArrayList<String>();
