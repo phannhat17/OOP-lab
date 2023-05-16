@@ -50,6 +50,7 @@ public class CompactDisc extends Media implements Playable {
     }
 
     // Play method
+    @Override
     public void play() {
         System.out.println("Playing CD: " + this.getTitle());
         System.out.println("CD length: " + this.getLength());

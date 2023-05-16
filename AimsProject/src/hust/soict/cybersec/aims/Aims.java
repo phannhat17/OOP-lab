@@ -32,14 +32,15 @@ public class Aims {
                     storeMenu(scanner);
                     break;
                 case 2:
-                    // 
+                    clearConsole();
+                    storeMenu(scanner);
                     break;
                 case 3:
                     clearConsole();
                     cartMenu(scanner);
                     break;
                 default:
-                    clearConsole();
+                    clearConsole(); 
                     System.out.println("Invalid option, please choose again.");
                     break;
             }
@@ -132,8 +133,8 @@ public class Aims {
                     back = true;
                     break;
                 case 1:
-                    boolean found = false;
-                    while (!found) {
+                    boolean foundDetails = false;
+                    while (!foundDetails) {
                         System.out.println("Enter the title of the media (type 0 to stop): ");
                         String title = scanner.nextLine();
                         if (title.equals("0")) {
@@ -145,18 +146,52 @@ public class Aims {
                             clearConsole();
                             System.out.println("Details: ");
                             System.out.println(media);
-                            mediaDetailsMenu(scanner);
-                            found = true;
+                            mediaDetailsMenu(scanner, media);
+                            foundDetails = true;
                         } else {
                             System.out.println("***MEDIA NOT FOUND***");
                         }
                     }
                     break;
                 case 2:
-                    // 
+                    boolean foundToAdd = false;
+                    while (!foundToAdd) {
+                        System.out.println("Enter the title of the media (type 0 to stop): ");
+                        String title = scanner.nextLine();
+                        if (title.equals("0")) {
+                            clearConsole();
+                            break;
+                        }
+                        Media media = store.search(title);
+                        if (media != null) {
+                            cart.addMedia(media);
+                            foundToAdd = true;
+                        } else {
+                            System.out.println("***MEDIA NOT FOUND***");
+                        }
+                    }
                     break;
                 case 3:
-                    cartMenu(scanner);
+                    boolean foundToPlay = false;
+                    while (!foundToPlay) {
+                        System.out.println("Enter the title of the media (type 0 to stop): ");
+                        String title = scanner.nextLine();
+                        if (title.equals("0")) {
+                            clearConsole();
+                            break;
+                        }
+                        Media media = store.search(title);
+                        if (media != null) {
+                            if (media instanceof Disc || media instanceof CompactDisc) {
+                                media.play();
+                            } else {
+                                System.out.println("This type of media is not supported!");
+                            }
+                            foundToPlay = true;
+                        } else {
+                            System.out.println("***MEDIA NOT FOUND***");
+                        }
+                    }
                     break;
                 case 4:
                     cartMenu(scanner);
@@ -166,9 +201,8 @@ public class Aims {
                     break;
             }
         }
-        
     }
-    public static void mediaDetailsMenu(Scanner scanner) {
+    public static void mediaDetailsMenu(Scanner scanner, Media media) {
         boolean back = false;
         while (!back) {
             System.out.println("Options: ");
@@ -186,10 +220,14 @@ public class Aims {
                     back = true;
                     break;
                 case 1:
-                    // 
+                    cart.addMedia(media);
                     break;
                 case 2:
-                    // 
+                    if (media instanceof Disc || media instanceof CompactDisc) {
+                        media.play();
+                    } else {
+                        System.out.println("This type of media is not supported!");
+                    }
                     break;
                 default:
                     System.out.println("Invalid option, please choose again.");
