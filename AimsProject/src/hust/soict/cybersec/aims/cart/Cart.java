@@ -19,6 +19,7 @@ public class Cart {
         } else {
             itemsOrdered.add(media);
             System.out.println(media.getTitle() + " has been added!");
+            qtyOrdered +=1;
         }
     }
     public void removeMedia(Media media) {
@@ -27,11 +28,21 @@ public class Cart {
         } else {
             if (itemsOrdered.remove(media)) {
                 System.out.println(media.getTitle() + " has been removed from the cart.");
+                qtyOrdered -=1;
             } else {
                 System.out.println("Media not found in cart!");
             }
         }
     }
+    // Searcb to remove
+    public Media searchToRemove(String title) {
+		for (Media media : itemsOrdered) {
+			if (media.getTitle().equals(title)) {
+				return media;
+			}
+		}
+		return null;
+	}
 
     // Search by title, category, price (max cost/ min-max cost) and ID
     public void searchByTitle(String keyword) {
@@ -112,13 +123,43 @@ public class Cart {
     public void print() {
         System.out.println("***********************CART***********************");
         System.out.println("Ordered Items:");
-        int i =0;
         for (Media media : itemsOrdered) {
-            i +=1;
-            System.out.println(i + ". " + media);
+            System.out.println(media);
         }
+        System.out.println("Total items: " + qtyOrdered);
         System.out.println("Total cost: " + totalCost());
         System.out.println("***************************************************");
     }
 
+    public void empty() {
+        if (itemsOrdered.size() == 0) {
+            System.out.println("Nothing to remove!");
+        } else {
+            qtyOrdered = 0;
+            itemsOrdered.clear();
+            System.out.println("Order created.");
+            System.out.println("Now your current cart will be empty!");
+            System.out.println();
+        }
+    }
+
+    // Sort media in cart
+    public void sortMediaByTitle() {
+        Collections.sort((List<Media>)itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        Iterator<Media> iterator = itemsOrdered.iterator();
+        iterator = itemsOrdered.iterator();
+    
+        while (iterator.hasNext()) {
+            System.out.println(((Media)iterator.next()).toString());
+        }
+    }
+    public void sortMediaByCost() {
+        Collections.sort((List<Media>)itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        Iterator<Media> iterator = itemsOrdered.iterator();
+        iterator = itemsOrdered.iterator();
+    
+        while (iterator.hasNext()) {
+            System.out.println(((Media)iterator.next()).toString());
+        }
+    }
 }
