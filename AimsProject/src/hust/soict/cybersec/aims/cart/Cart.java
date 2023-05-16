@@ -135,6 +135,7 @@ public class Cart {
         if (itemsOrdered.size() == 0) {
             System.out.println("Nothing to remove!");
         } else {
+            qtyOrdered = 0;
             itemsOrdered.clear();
             System.out.println("Order created.");
             System.out.println("Now your current cart will be empty!");
