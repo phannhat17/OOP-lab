@@ -28,15 +28,18 @@ public class Aims {
                     System.out.println("Good bye!");
                     break;
                 case 1:
+                    clearConsole();
                     storeMenu(scanner);
                     break;
                 case 2:
                     // 
                     break;
                 case 3:
-                    cartMenu();
+                    clearConsole();
+                    cartMenu(scanner);
                     break;
                 default:
+                    clearConsole();
                     System.out.println("Invalid option, please choose again.");
                     break;
             }
@@ -45,15 +48,8 @@ public class Aims {
 
     }
     public static void clearConsole() {
-        try {
-            if (System.getProperty("os.name").contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            } else {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        } catch (Exception e) {
-            System.out.println(e);
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
         }
     }
     // init store setup 
@@ -106,7 +102,6 @@ public class Aims {
     
     // Print method
     public static void showMenu() {
-        clearConsole();
         System.out.println("AIMS: ");
         System.out.println("--------------------------------");
         System.out.println("1. View store");
@@ -119,7 +114,6 @@ public class Aims {
     public static void storeMenu(Scanner scanner) {
         boolean back = false;
         while (!back) {
-            clearConsole();
             store.print();
             System.out.println("Options: ");
             System.out.println("--------------------------------");
@@ -134,17 +128,39 @@ public class Aims {
             scanner.nextLine();
             switch (option) {
                 case 0:
+                    clearConsole();
                     back = true;
                     break;
                 case 1:
-                    storeMenu(scanner);
+                    boolean found = false;
+                    while (!found) {
+                        System.out.println("Enter the title of the media (type 0 to stop): ");
+                        String title = scanner.nextLine();
+                        if (title.equals("0")) {
+                            clearConsole();
+                            break;
+                        }
+                        Media media = store.search(title);
+                        if (media != null) {
+                            clearConsole();
+                            System.out.println("Details: ");
+                            System.out.println(media);
+                            mediaDetailsMenu(scanner);
+                            found = true;
+                        } else {
+                            System.out.println("***MEDIA NOT FOUND***");
+                        }
+                    }
                     break;
                 case 2:
                     // 
                     break;
                 case 3:
-                    cartMenu();
+                    cartMenu(scanner);
                     break;
+                case 4:
+                    cartMenu(scanner);
+                    break;    
                 default:
                     System.out.println("Invalid option, please choose again.");
                     break;
@@ -152,26 +168,76 @@ public class Aims {
         }
         
     }
-    public static void mediaDetailsMenu() {
-        System.out.println("Options: ");
-        System.out.println("--------------------------------");
-        System.out.println("1. Add to cart");
-        System.out.println("2. Play");
-        System.out.println("0. Back");
-        System.out.println("--------------------------------");
-        System.out.println("Please choose a number: 0-1-2");
+    public static void mediaDetailsMenu(Scanner scanner) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("Options: ");
+            System.out.println("--------------------------------");
+            System.out.println("1. Add to cart");
+            System.out.println("2. Play");
+            System.out.println("0. Back");
+            System.out.println("--------------------------------");
+            System.out.println("Please choose a number: 0-1-2");
+            int option = scanner.nextInt();
+            scanner.nextLine();
+            switch (option) {
+                case 0:
+                    clearConsole(); 
+                    back = true;
+                    break;
+                case 1:
+                    // 
+                    break;
+                case 2:
+                    // 
+                    break;
+                default:
+                    System.out.println("Invalid option, please choose again.");
+                    break;
+            }
+        }
     }
-    public static void cartMenu() {
-        cart.print();
-        System.out.println("Options: ");
-        System.out.println("--------------------------------");
-        System.out.println("1. Filter medias in cart");
-        System.out.println("2. Sort medias in cart");
-        System.out.println("3. Remove media from cart");
-        System.out.println("4. Play a media");
-        System.out.println("5. Place order");
-        System.out.println("0. Back");
-        System.out.println("--------------------------------");
-        System.out.println("Please choose a number: 0-1-2-3-4-5");
+
+    public static void cartMenu(Scanner scanner) {
+        boolean back = false;
+        while (!back) {
+            cart.print();
+            System.out.println("Options: ");
+            System.out.println("--------------------------------");
+            System.out.println("1. Filter medias in cart");
+            System.out.println("2. Sort medias in cart");
+            System.out.println("3. Remove media from cart");
+            System.out.println("4. Play a media");
+            System.out.println("5. Place order");
+            System.out.println("0. Back");
+            System.out.println("--------------------------------");
+            System.out.println("Please choose a number: 0-1-2-3-4-5");
+            int option = scanner.nextInt();
+            scanner.nextLine();
+            switch (option) {
+                case 0:
+                    clearConsole(); 
+                    back = true;
+                    break;
+                case 1:
+                    // 
+                    break;
+                case 2:
+                    // 
+                    break;
+                case 3:
+                    // 
+                    break;
+                case 4:
+                    // 
+                    break;
+                case 5:
+                    // 
+                    break;
+                default:
+                    System.out.println("Invalid option, please choose again.");
+                    break;
+            }
+        }
     }
 }
