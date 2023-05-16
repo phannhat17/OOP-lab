@@ -39,5 +39,14 @@ public class Store {
         }
     }
 
+    public Media getMedia(String title) {
+		for (Media media : itemsInStore) {
+			if (media.getTitle().equals(title)) {
+				return media;
+			}
+		}
+		return null;
+	}
+
 
 }
