@@ -126,7 +126,7 @@ public class Cart {
         for (Media media : itemsOrdered) {
             System.out.println(media);
         }
-        System.out.println("Total items: " + (qtyOrdered+1));
+        System.out.println("Total items: " + qtyOrdered);
         System.out.println("Total cost: " + totalCost());
         System.out.println("***************************************************");
     }
