@@ -61,7 +61,7 @@ public class CompactDisc extends Media implements Playable {
 
     @Override
     public String toString() {
-        return "CD: " + this.getTitle() +
+        return this.getId() + " - CD: " + this.getTitle() +
                 " - Category: " + this.getCategory() +
                 " - Artist" + this.getArtist() +
                 " - Length: " + this.getLength() + " seconds" + 

@@ -30,10 +30,8 @@ public class Store {
             System.out.println("The store is empty!");
         } else {
             System.out.println("********************STORE INVENTORY********************");
-            int i = 0;
             for (Media media : itemsInStore) {
-                i +=1;
-                System.out.println(i +" - " + media);
+                System.out.println(media);
             }
             System.out.println("********************************************************");
         }
@@ -47,6 +45,4 @@ public class Store {
 		}
 		return null;
 	}
-
-
 }
