@@ -4,33 +4,34 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import hust.soict.cybersec.aims.cart.Cart;
 import hust.soict.cybersec.aims.media.*;
 
 
 public class MediaStore extends JPanel {
-    
-    public MediaStore(Media media) {
+        public MediaStore(Media media, Cart cart) {
 
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+            this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        JLabel title = new JLabel(media.getTitle());
-        title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 20));
-        title.setAlignmentX(CENTER_ALIGNMENT);
+            JLabel title = new JLabel(media.getTitle());
+            title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 20));
+            title.setAlignmentX(CENTER_ALIGNMENT);
 
-        JLabel cost = new JLabel(""+media.getCost()+"$");
-        cost.setAlignmentX(CENTER_ALIGNMENT);
+            JLabel cost = new JLabel(""+media.getCost()+"$");
+            cost.setAlignmentX(CENTER_ALIGNMENT);
 
-        JPanel container = new JPanel();
-        container.setLayout(new FlowLayout(FlowLayout.CENTER));
+            JPanel container = new JPanel();
+            container.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        JButton addToCartButton = new JButton("Add to cart");
-        addToCartButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, media.getTitle() + " added to cart");
-            }
-        });
-        container.add(addToCartButton);
-        
+            JButton addToCartButton = new JButton("Add to cart");
+            addToCartButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    cart.addMedia(media);
+                    JOptionPane.showMessageDialog(null, media.getTitle() + " added to cart");
+                }
+            });
+            container.add(addToCartButton);
+            
 
 
         
@@ -61,7 +62,7 @@ public class MediaStore extends JPanel {
         this.add(cost);
         this.add(Box.createVerticalGlue());
         this.add(container);
-
+        
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
 
