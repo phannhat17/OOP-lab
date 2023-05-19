@@ -1,5 +1,6 @@
 package hust.soict.cybersec.aims.media;
 
+import java.time.Duration;
 import java.util.Comparator;
 
 public abstract class Media implements Comparable<Media> {
@@ -64,6 +65,11 @@ public abstract class Media implements Comparable<Media> {
         return "Playing media";
     }
 
+    public String formatDuration(int durationInSeconds) {
+        Duration duration = Duration.ofSeconds(durationInSeconds);
+        return String.format("%02d:%02d", duration.toMinutes(), duration.minusMinutes(duration.toMinutes()).getSeconds());
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
