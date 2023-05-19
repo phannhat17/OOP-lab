@@ -67,4 +67,15 @@ public class CompactDisc extends Media implements Playable {
                 " - Length: " + this.getLength() + " seconds" + 
                 " - Cost: " + this.getCost() + "$";
     }
+
+
+    public String playGUI() {
+        String output =  "<html>Playing CD: " + this.getTitle() + "<br>" + 
+                        "CD length: " + this.getLength() + "<br>"+ "<br>";
+        for (Track track : tracks) {
+            output += track.playGUI() + "<br>";
+        }
+        output += "</html>";
+        return output;
+    }
 }
