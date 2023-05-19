@@ -17,7 +17,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -80,7 +79,7 @@
             </TableView>
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
               <buttons>
-                <Button fx:id="btnPlay" mnemonicParsing="false" text="Play" />
+                <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#btnPlayPressed" text="Play" />
                   <Button fx:id="btnRemove" layoutX="949.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnRemovePressed" text="Remove" />
               </buttons>
             </ButtonBar>
@@ -110,7 +109,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" style="-fx-background-color: red;" text="Place Order" textFill="WHITE">
+            <Button fx:id="placeOrder" mnemonicParsing="false" onAction="#placeOrderPressed" style="-fx-background-color: red;" text="Place Order" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>

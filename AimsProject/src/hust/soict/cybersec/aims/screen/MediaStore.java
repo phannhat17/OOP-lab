@@ -38,7 +38,7 @@ public class MediaStore extends JPanel {
             JButton playButton = new JButton("Play");
             playButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    // Open a dialog window to play the media
+
                     JDialog dialog = new JDialog();
                     dialog.setTitle(media.getTitle());
                     dialog.setSize(400, 300);
@@ -48,7 +48,6 @@ public class MediaStore extends JPanel {
                     mediaLabel.setHorizontalAlignment(JLabel.CENTER);
                     JScrollPane scrollPane = new JScrollPane(mediaLabel);
                     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-                    // scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); 
                     
                     dialog.add(scrollPane);
                     dialog.setVisible(true);

@@ -148,6 +148,16 @@ public class Cart {
             System.out.println();
         }
     }
+    
+    public String placeOrder() {
+        if (itemsOrdered.size() == 0) {
+            return "Your cart is empty!";
+        } else {
+            qtyOrdered = 0;
+            itemsOrdered.clear();
+            return "Order created!\n" + "Now your cart will be empty!";
+        }
+    }
 
     // Sort media in cart
     public void sortMediaByTitle() {
@@ -168,4 +178,6 @@ public class Cart {
             System.out.println(((Media)iterator.next()).toString());
         }
     }
+
+
 }
