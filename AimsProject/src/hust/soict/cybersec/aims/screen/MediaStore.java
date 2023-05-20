@@ -42,8 +42,9 @@ public class MediaStore extends JPanel {
                     JDialog dialog = new JDialog();
                     dialog.setTitle(media.getTitle());
                     dialog.setSize(400, 300);
-                    
-                    JLabel mediaLabel = new JLabel(media.playGUI());
+
+                    String mediaInfo = "<html>"+ media.playGUI().replace("\n", "<br/>") + "</html>";
+                    JLabel mediaLabel = new JLabel(mediaInfo);
                     mediaLabel.setVerticalAlignment(JLabel.CENTER); 
                     mediaLabel.setHorizontalAlignment(JLabel.CENTER);
                     JScrollPane scrollPane = new JScrollPane(mediaLabel);
