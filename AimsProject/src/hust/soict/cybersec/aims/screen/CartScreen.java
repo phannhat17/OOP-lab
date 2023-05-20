@@ -1,7 +1,6 @@
 package hust.soict.cybersec.aims.screen;
 
 import javax.swing.JFrame;
-import hust.soict.cybersec.aims.media.*;
 import hust.soict.cybersec.aims.screen.controller.CartScreenController;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
