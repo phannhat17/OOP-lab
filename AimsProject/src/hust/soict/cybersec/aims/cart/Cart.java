@@ -17,15 +17,15 @@ public class Cart {
     public int qtyOrdered = 0;
 
     // Add and remove media from cart
-    public void addMedia(Media media) {
+    public String addMedia(Media media) {
         if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED) {
-            System.out.println("The cart is almost full!");
+            return("The cart is almost full!");
         } else if (itemsOrdered.contains(media)) {
-            System.out.println(media.getTitle() + " is already in the cart!");
+            return(media.getTitle() + " is already in the cart!");
         } else {
-            itemsOrdered.add(media);
-            System.out.println(media.getTitle() + " has been added!");
             qtyOrdered +=1;
+            itemsOrdered.add(media);
+            return (media.getTitle() + " has been added!");
         }
     }
     public void removeMedia(Media media) {

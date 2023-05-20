@@ -26,8 +26,7 @@ public class MediaStore extends JPanel {
             JButton addToCartButton = new JButton("Add to cart");
             addToCartButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    cart.addMedia(media);
-                    JOptionPane.showMessageDialog(null, media.getTitle() + " added to cart");
+                    JOptionPane.showMessageDialog(null, cart.addMedia(media));
                 }
             });
             container.add(addToCartButton);
