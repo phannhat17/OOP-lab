@@ -1,43 +1,41 @@
 package hust.soict.cybersec.aims.screen;
 
 import javax.swing.JFrame;
-import hust.soict.cybersec.aims.screen.controller.CartScreenController;
+import hust.soict.cybersec.aims.screen.controller.AddBookScreenController;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import hust.soict.cybersec.aims.cart.Cart;
+import hust.soict.cybersec.aims.store.Store;
 
+public class AddBookToStoreScreen extends JFrame{
 
-
-public class CartScreen extends JFrame {
-
-    private static Cart cart;
+    private static Store store;
     
     public static void main(String[] args) {
-		new CartScreen(cart);
+		new AddBookToStoreScreen(store);
 	}
 
-    public CartScreen(Cart cart) {
+    public AddBookToStoreScreen(Store store) {
 
         super();
 
-        CartScreen.cart = cart;
+        AddBookToStoreScreen.store = store;
 
         JFXPanel fxPanel = new JFXPanel();
         this.add(fxPanel);
 
-        this.setTitle("Cart");
+        this.setTitle("Add Book");
         this.setSize(1024, 768);
         this.setVisible(true);
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/cybersec/aims/screen/view/cart.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/cybersec/aims/screen/view/addBook.fxml"));
                     
-                    CartScreenController controller = new CartScreenController(cart);
+                    AddBookScreenController controller = new AddBookScreenController(store);
                     loader.setController(controller);
                     Parent root = loader.load();
                     fxPanel.setScene(new Scene(root));

@@ -1,43 +1,41 @@
 package hust.soict.cybersec.aims.screen;
 
 import javax.swing.JFrame;
-import hust.soict.cybersec.aims.screen.controller.CartScreenController;
+import hust.soict.cybersec.aims.screen.controller.AddCDScreenController;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import hust.soict.cybersec.aims.cart.Cart;
+import hust.soict.cybersec.aims.store.Store;
 
+public class AddCompactDiscToStoreScreen extends JFrame{
 
-
-public class CartScreen extends JFrame {
-
-    private static Cart cart;
+    private static Store store;
     
     public static void main(String[] args) {
-		new CartScreen(cart);
+		new AddCompactDiscToStoreScreen(store);
 	}
 
-    public CartScreen(Cart cart) {
+    public AddCompactDiscToStoreScreen(Store store) {
 
         super();
 
-        CartScreen.cart = cart;
+        AddCompactDiscToStoreScreen.store = store;
 
         JFXPanel fxPanel = new JFXPanel();
         this.add(fxPanel);
 
-        this.setTitle("Cart");
+        this.setTitle("Add DVD");
         this.setSize(1024, 768);
         this.setVisible(true);
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/cybersec/aims/screen/view/cart.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/cybersec/aims/screen/view/addCD.fxml"));
                     
-                    CartScreenController controller = new CartScreenController(cart);
+                    AddCDScreenController controller = new AddCDScreenController(store);
                     loader.setController(controller);
                     Parent root = loader.load();
                     fxPanel.setScene(new Scene(root));
