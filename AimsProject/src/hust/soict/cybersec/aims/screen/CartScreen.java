@@ -16,7 +16,6 @@ public class CartScreen extends JFrame {
     private static Cart cart;
     
     public static void main(String[] args) {
-        // initSetup();
 		new CartScreen(cart);
 	}
 
