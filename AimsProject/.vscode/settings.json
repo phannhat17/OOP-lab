@@ -3,13 +3,5 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx.base.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx.controls.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx.fxml.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx.graphics.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx.media.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx.swing.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx.web.jar",
-        "c:\\Users\\f1rst\\Downloads\\javafx-sdk-17.0.7\\lib\\javafx-swt.jar"
     ]
 }
