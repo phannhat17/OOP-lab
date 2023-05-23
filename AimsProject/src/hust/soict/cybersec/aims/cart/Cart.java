@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 
 public class Cart {
     
-    public static final int MAX_NUMBERS_ORDERED = 2;
+    public static final int MAX_NUMBERS_ORDERED = 20;
     private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
     public ObservableList<Media> getItemsOrdered() {
 		return itemsOrdered;

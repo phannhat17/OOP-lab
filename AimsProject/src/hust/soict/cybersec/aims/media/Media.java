@@ -3,6 +3,8 @@ package hust.soict.cybersec.aims.media;
 import java.time.Duration;
 import java.util.Comparator;
 
+import hust.soict.cybersec.aims.exception.PlayerException;
+
 public abstract class Media implements Comparable<Media> {
 
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
@@ -61,7 +63,7 @@ public abstract class Media implements Comparable<Media> {
         System.out.println("Playing media");
     }
     
-    public String playGUI() {
+    public String playGUI() throws PlayerException {
         return "Playing media";
     }
 

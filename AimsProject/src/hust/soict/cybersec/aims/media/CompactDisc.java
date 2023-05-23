@@ -2,6 +2,8 @@ package hust.soict.cybersec.aims.media;
 
 import java.util.*;
 
+import hust.soict.cybersec.aims.exception.PlayerException;
+
 public class CompactDisc extends Media implements Playable {
 
     private String artist;
@@ -69,7 +71,7 @@ public class CompactDisc extends Media implements Playable {
     }
 
 
-    public String playGUI() {
+    public String playGUI() throws PlayerException {
         String output =  "Playing CD: " + this.getTitle() + "\n" + 
                         "CD length: " + formatDuration(this.getLength()) + "\n"+ "\n";
         for (Track track : tracks) {

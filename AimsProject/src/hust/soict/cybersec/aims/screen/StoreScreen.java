@@ -52,7 +52,7 @@ public class StoreScreen extends JFrame {
 
         CompactDisc cd3 = new CompactDisc("Purpose", "Music","Justin Bieber", 1000.98f);
         Track track1CD3 = new Track("The Feeling", 4*60+5);
-        Track track2CD3 = new Track("No Sense", 4*60+35);
+        Track track2CD3 = new Track("No Sense", 0);
         cd3.addTrack(track1CD3);
         cd3.addTrack(track2CD3);
 
