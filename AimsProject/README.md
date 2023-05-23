@@ -1,3 +1,3 @@
 ## Answer for questions in the lab 
 
-This lab does not have any questions
+The answer for each lab is in the branch release for that lab
