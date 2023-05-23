@@ -72,11 +72,19 @@ public class CompactDisc extends Media implements Playable {
 
 
     public String playGUI() throws PlayerException {
-        String output =  "Playing CD: " + this.getTitle() + "\n" + 
-                        "CD length: " + formatDuration(this.getLength()) + "\n"+ "\n";
-        for (Track track : tracks) {
-            output += track.playGUI() + "\n";
-        }
-        return output;
+        if(this.getLength() > 0) {
+            String output =  "Playing CD: " + this.getTitle() + "\n" + 
+                            "CD length: " + formatDuration(this.getLength()) + "\n"+ "\n";
+            for (Track track : tracks) {
+                try {
+                    output += track.playGUI() + "\n";
+                } catch (PlayerException e) {
+                    output += track.getTitle() + "\n" + e.getMessage();
+                }
+            }
+            return output;
+            } else {
+                throw new PlayerException("ERROR: CD length is non-positive!");
+            }
     }
 }
