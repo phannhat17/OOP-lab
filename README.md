@@ -5,4 +5,4 @@ Lab exercises for Object-oriented Programming course SoICT - HUST
 - `Lab 02` - COMPLETED - Location: [OtherProjects/Lab02](./OtherProjects/Lab02/)
 - `Lab 03` - COMPLETED - Location: [Branch: release/lab03](https://github.com/phannhat17/OOP-lab/tree/release/lab03)
 - `Lab 04` - COMPLETED - Location: [Branch: release/lab04](https://github.com/phannhat17/OOP-lab/tree/release/lab04)
-- `Lab 05` - COMPLETED - Location: [Branch: release/lab04](https://github.com/phannhat17/OOP-lab/tree/release/lab05)
+- `Lab 05` - COMPLETED - Location: [Branch: release/lab05](https://github.com/phannhat17/OOP-lab/tree/release/lab05)
