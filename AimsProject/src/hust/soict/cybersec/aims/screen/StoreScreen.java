@@ -20,7 +20,7 @@ public class StoreScreen extends JFrame {
 
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);     
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star War", "Science Fiction", "George Lucas", 87, 24.95f); 
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", null, 0, 18.99f);
         store.addMedia(dvd1);
         store.addMedia(dvd2);
         store.addMedia(dvd3);
@@ -52,7 +52,7 @@ public class StoreScreen extends JFrame {
 
         CompactDisc cd3 = new CompactDisc("Purpose", "Music","Justin Bieber", 1000.98f);
         Track track1CD3 = new Track("The Feeling", 4*60+5);
-        Track track2CD3 = new Track("No Sense", 4*60+35);
+        Track track2CD3 = new Track("No Sense", 0);
         cd3.addTrack(track1CD3);
         cd3.addTrack(track2CD3);
 

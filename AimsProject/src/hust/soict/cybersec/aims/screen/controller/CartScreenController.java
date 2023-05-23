@@ -1,6 +1,7 @@
 package hust.soict.cybersec.aims.screen.controller;
 
 import hust.soict.cybersec.aims.cart.Cart;
+import hust.soict.cybersec.aims.exception.PlayerException;
 import hust.soict.cybersec.aims.media.Media;
 import hust.soict.cybersec.aims.media.Playable;
 import javafx.beans.value.ChangeListener;
@@ -61,11 +62,20 @@ public class CartScreenController {
     @FXML
     void btnPlayPressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
-        Alert alert = new Alert(Alert.AlertType.NONE, media.playGUI());
-        alert.setTitle("Playing");
-        alert.setHeaderText(null);
-        alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
-        alert.showAndWait();
+        Alert alert;
+        try {
+            alert = new Alert(Alert.AlertType.NONE, media.playGUI());
+            alert.setTitle("Playing");
+            alert.setHeaderText(null);
+            alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
+            alert.showAndWait();
+        } catch (PlayerException e) {
+            alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+            alert.setTitle("ERROR");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+        }
+        
     }
 
     @FXML
